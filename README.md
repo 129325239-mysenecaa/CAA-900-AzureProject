@@ -13,9 +13,9 @@
  - [an image](#my-collaboration-image)
  - [single line code snippet](#my-single-line-of-code)
  - [multi line code snippet (preferably bash script)](#my-multiple-lines-of-code)
- - sample .json objects
- - sample table
- - sample hyperlink
+ - [sample .json objects](#sample-json-code)
+ - [sample table](#sample-table)
+ - [sample hyperlink](#sample-hyperlink)
 
 ### My Collaboration Image
 ![image1](collab.jpg)
