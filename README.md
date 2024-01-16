@@ -10,9 +10,9 @@
 - **TEACHER’S NAME: Atoosa Nasiri**
 
 ## Table of Contents
- - [an image](#my-collaboration-image)
- - [single line code snippet](#my-single-line-of-code)
- - [multi line code snippet (preferably bash script)](#my-multiple-lines-of-code)
+ - [An image](#my-collaboration-image)
+ - [Single Line Code Snippet](#my-single-line-of-code)
+ - [Multi line code snippet (preferably bash script)](#my-multiple-lines-of-code)
  - [sample .json objects](#sample-json-code)
  - [sample table](#sample-table)
  - [sample hyperlink](#sample-hyperlink)
@@ -77,6 +77,34 @@ In mark-down we embed multiple lines of code using triple back quotes
 | Nov. 8, 2023 |	Returning students — Winter 2024 Term: tuition deposit due for 2023/2024 academic year (tuition deposit is due once per academic year) |
 | Dec. 1, 2023 |	Last day to submit requests for transfer credit for Winter 2024 Term |
 | Dec. 6, 2023 |	Open enrolment begins for Winter 2024 Term on Student Home |
+
+<table>
+<tr>
+<th>Heading 1</th>
+<th>Heading 2</th>
+</tr>
+<tr>
+
+<td>
+
+| A | B | C |
+|--|--|--|
+| 1 | 2 | 3 |
+
+</td><td>
+
+| A | B | C |
+|--|--|--|
+| 1 | 2 | 3 |
+
+<pre lang="js">
+console.log(fullName); // undefined
+fullName = "Dariana Trahan";
+console.log(fullName); // Dariana Trahan
+var fullName;
+</pre>
+
+</td></tr> </table>
 
 
 ### Sample hyperlink
