@@ -107,7 +107,7 @@ var fullName;
 
 </td></tr> </table>
 
-### Sample Collaboration Comment
+### Collaboration in GitHub - Suggestions
 
 ### Sample hyperlink
 
