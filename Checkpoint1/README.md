@@ -81,34 +81,37 @@ In mark-down we embed multiple lines of code using triple back quotes
 
 <table>
 <tr>
-<th>Heading 1</th>
-<th>Heading 2</th>
+<th>Single Line</th>
+<th>Multi-line</th>
+<th>Sample Code</th>
+<th>Hello World</th>	
 </tr>
 <tr>
-
 <td>
-
-| A | B | C |
-|--|--|--|
-| 1 | 2 | 3 |
-
+<div>
+`sudo apy-get update`
+</div>
 </td><td>
-
-| A | B | C |
-|--|--|--|
-| 1 | 2 | 3 |
-
+```bash
+   sudo yum install -y yum-utils
+   sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+   sudo yum -y install terraform
+```
+</td><td>
 <pre lang="js">
 console.log(fullName); // undefined
 fullName = "Dariana Trahan";
 console.log(fullName); // Dariana Trahan
 var fullName;
-</pre>
-
+</pre>	
+</td><td>
+| A | B | C |
+|--|--|--|
+| 1 | 2 | 3 |	
 </td></tr> </table>
 
 ### Collaboration in GitHub - Suggestions
-![image1](Checkpoint1/discussion-screenshot.png)
+![image2](discussion-screenshot.png)
 
 ### Sample hyperlink
 
