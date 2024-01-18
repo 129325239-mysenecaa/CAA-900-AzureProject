@@ -15,7 +15,7 @@
  - [Multi line code snippet (preferably bash script)](#my-multiple-lines-of-code)
  - [sample .json objects](#sample-json-code)
  - [sample table](#sample-table)
- - [sample collaboration comment](#sample-collaboration)
+ - [sample collaboration comment](#collaboration-in-github-suggestions)
  - [sample hyperlink](#sample-hyperlink)
 
 ### My Collaboration Image
@@ -108,6 +108,7 @@ var fullName;
 </td></tr> </table>
 
 ### Collaboration in GitHub - Suggestions
+![image1](discussion-screenshot.jpg)
 
 ### Sample hyperlink
 
