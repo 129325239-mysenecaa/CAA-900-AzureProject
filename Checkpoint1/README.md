@@ -3,7 +3,7 @@
 
 # Checkpoint1 Submission
 
-- **COURSE INFORMATION: xxx**
+- **COURSE INFORMATION: CAA900ZAA**
 - **STUDENT’S NAME: Isaiah Cyrus Majam**
 - **STUDENT'S NUMBER: 129325239**
 - **GITHUB USER_ID: 129325239-mysenecaa**
@@ -15,6 +15,7 @@
  - [Multi line code snippet (preferably bash script)](#my-multiple-lines-of-code)
  - [sample .json objects](#sample-json-code)
  - [sample table](#sample-table)
+ - [sample collaboration comment](#sample-collaboration)
  - [sample hyperlink](#sample-hyperlink)
 
 ### My Collaboration Image
@@ -106,6 +107,7 @@ var fullName;
 
 </td></tr> </table>
 
+### Sample Collaboration Comment
 
 ### Sample hyperlink
 
