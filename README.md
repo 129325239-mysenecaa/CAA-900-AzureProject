@@ -3,114 +3,43 @@
 
 # Checkpoint1 Submission
 
-- **COURSE INFORMATION: xxx**
+- **COURSE INFORMATION: CAA900ZAA**
 - **STUDENT’S NAME: Isaiah Cyrus Majam**
 - **STUDENT'S NUMBER: 129325239**
 - **GITHUB USER_ID: 129325239-mysenecaa**
 - **TEACHER’S NAME: Atoosa Nasiri**
 
 ## Table of Contents
- - [An image](#my-collaboration-image)
- - [Single Line Code Snippet](#my-single-line-of-code)
- - [Multi line code snippet (preferably bash script)](#my-multiple-lines-of-code)
- - [sample .json objects](#sample-json-code)
- - [sample table](#sample-table)
- - [sample hyperlink](#sample-hyperlink)
+ - [Checkpoint 1](#checkpoint-1)
+ - [Checkpoint 2](#checkpoint-2)
+ - [Checkpoint 3](#checkpoint-3)
+ - [Checkpoint 4](#checkpoint-4)
+ - [Checkpoint 5](#checkpoint-5)
+ - [Checkpoint 6](#checkpoint-6)
 
-### My Collaboration Image
-![image1](collab.jpg)
+   
+## Checkpoint 1
 
-### My Single line of code
+- [Link to Checkpoint 1](https://github.com/129325239-mysenecaa/CAA-900-AzureProject/tree/main/Checkpoint1)
 
-In mark-down if you want to embed a code in text, use single back quotes like `sudo apy-get update`
+## Checkpoint 2
 
+- [Link to Checkpoint 2]()
 
-### My Multiple lines of code
+## Checkpoint 3
 
-In mark-down we embed multiple lines of code using triple back quotes
+- [Link to Checkpoint 3]()
 
-```bash
-   sudo yum install -y yum-utils
-   sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
-   sudo yum -y install terraform
-```
+## Checkpoint 4
 
-### Sample .json code
-```json
-{
-    "glossary": {
-        "title": "example glossary",
-		"GlossDiv": {
-            "title": "S",
-			"GlossList": {
-                "GlossEntry": {
-                    "ID": "SGML",
-					"SortAs": "SGML",
-					"GlossTerm": "Standard Generalized Markup Language",
-					"Acronym": "SGML",
-					"Abbrev": "ISO 8879:1986",
-					"GlossDef": {
-                        "para": "A meta-markup language, used to create markup languages such as DocBook.",
-						"GlossSeeAlso": ["GML", "XML"]
-                    },
-					"GlossSee": "markup"
-                }
-            }
-        }
-    }
-}
-```
+- [Link to Checkpoint 4]()
 
-### Sample Table
+## Checkpoint 5
 
+- [Link to Checkpoint 5]()
 
-| Default    | Left align | Center align | Right align |
-| ---------- | :--------- | :----------: | ----------: |
-| 9999999999 | 9999999999 | 9999999999   | 9999999999  |
-| 999999999  | 999999999  | 999999999    | 999999999   |
-| 99999999   | 99999999   | 99999999     | 99999999    |
-| 9999999    | 9999999    | 9999999      | 9999999     |
+## Checkpoint 6
 
-| Date | Event Name |
-| - | - |
-| Nov. 8, 2023 |	New students (domestic) — Winter 2024 Term tuition deposit due |
-| Nov. 8, 2023 |	Returning students — Winter 2024 Term: tuition deposit due for 2023/2024 academic year (tuition deposit is due once per academic year) |
-| Dec. 1, 2023 |	Last day to submit requests for transfer credit for Winter 2024 Term |
-| Dec. 6, 2023 |	Open enrolment begins for Winter 2024 Term on Student Home |
-
-<table>
-<tr>
-<th>Heading 1</th>
-<th>Heading 2</th>
-</tr>
-<tr>
-
-<td>
-
-| A | B | C |
-|--|--|--|
-| 1 | 2 | 3 |
-
-</td><td>
-
-| A | B | C |
-|--|--|--|
-| 1 | 2 | 3 |
-
-<pre lang="js">
-console.log(fullName); // undefined
-fullName = "Dariana Trahan";
-console.log(fullName); // Dariana Trahan
-var fullName;
-</pre>
-
-</td></tr> </table>
-
-
-### Sample hyperlink
-
-- [The Ultimate Markdown Cheat Sheet](https://towardsdatascience.com/the-ultimate-markdown-cheat-sheet-3d3976b31a0)
-
-
+- [Link to Checkpoint 6]()
 
 
