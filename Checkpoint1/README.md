@@ -64,14 +64,6 @@ In mark-down we embed multiple lines of code using triple back quotes
 
 ### Sample Table
 
-
-| Default    | Left align | Center align | Right align |
-| ---------- | :--------- | :----------: | ----------: |
-| 9999999999 | 9999999999 | 9999999999   | 9999999999  |
-| 999999999  | 999999999  | 999999999    | 999999999   |
-| 99999999   | 99999999   | 99999999     | 99999999    |
-| 9999999    | 9999999    | 9999999      | 9999999     |
-
 | Date | Event Name |
 | - | - |
 | Nov. 8, 2023 |	New students (domestic) — Winter 2024 Term tuition deposit due |
@@ -88,15 +80,16 @@ In mark-down we embed multiple lines of code using triple back quotes
 </tr>
 <tr>
 <td>
-<div>
-`sudo apy-get update`
-</div>
+<pre lang="bash">
+sudo apy-get update<br />
+</pre>
 </td><td>
-```bash
-   sudo yum install -y yum-utils
-   sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
-   sudo yum -y install terraform
-```
+<pre lang="bash">
+bash
+sudo yum install -y yum-utils
+sudo yum -y install terraform
+
+</pre>
 </td><td>
 <pre lang="js">
 console.log(fullName); // undefined
@@ -105,9 +98,11 @@ console.log(fullName); // Dariana Trahan
 var fullName;
 </pre>	
 </td><td>
+
 | A | B | C |
 |--|--|--|
-| 1 | 2 | 3 |	
+| 1 | 2 | 3 |
+
 </td></tr> </table>
 
 ### Collaboration in GitHub - Suggestions
