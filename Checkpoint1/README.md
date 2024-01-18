@@ -108,7 +108,7 @@ var fullName;
 </td></tr> </table>
 
 ### Collaboration in GitHub - Suggestions
-![image1](discussion-screenshot.jpg)
+![image1](Checkpoint1/discussion-screenshot.jpg)
 
 ### Sample hyperlink
 
