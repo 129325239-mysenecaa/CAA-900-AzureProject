@@ -10,9 +10,9 @@
 - **TEACHER’S NAME: Atoosa Nasiri**
 
 THE GIT PROCESS IS 
-
-git status
-git add .
-git commit
-git push
-git status
+<br />
+git status <br />
+git add . <br />
+git commit <br />
+git push <br />
+git status <br />
