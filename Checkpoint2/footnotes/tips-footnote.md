@@ -16,7 +16,7 @@ You can also use words, to fit your writing style more closely[^note].
     This footnote also has been made with a different syntax using 4 spaces for new lines.
 
 
-Rendered footnote would look like this:
+Rendered footnote would look something like this:
 
 <img src="./rendered-footnote.png"
      alt="Rendered Footnote"
