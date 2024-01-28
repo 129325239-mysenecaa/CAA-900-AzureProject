@@ -30,4 +30,4 @@ git status <br />
 - [git_status_untracked](https://github.com/129325239-mysenecaa/CAA-900-AzureProject/blob/main/Checkpoint2/git_status_untracked.txt)
 - [git_status_uncommitted](https://github.com/129325239-mysenecaa/CAA-900-AzureProject/blob/main/Checkpoint2/git_status_uncommitted.txt)
 - [git_status_committed](https://github.com/129325239-mysenecaa/CAA-900-AzureProject/blob/main/Checkpoint2/git_status_committed.txt)
-- ![image1](Checkpoint2 Part A.png)
+- ![image3](Checkpoint2PartA.png)
