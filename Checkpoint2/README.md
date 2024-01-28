@@ -38,8 +38,16 @@ git status <br />
 - The difference between `git status` and `git log` is that `git status` shows the information about the current state of the working directory and statging area while `git log` shows the commit history
 
 ### Part C - Creating & Merging Branches
-- "Everything is up to date" <br />
+- "Merging over here" <br />
 ![image4](Checkpoint2PartC.png)
 
 
 ### Part D - Git Branching Strategy Review Question
+- What are the differences between develop branch and main branch?
+    - The develop branch is the branch that has all the latest state of code used for development and the main branch is the latest code used in production environment that is basically only accepting the live and documented releases
+- What are the three supporting branches? Briefly describe the function of each of these supporting branches.
+    - Feature branches - Used when developing new features 
+    - Hotfix branches - Used when to work on fixes on the code
+    - Release branches - Used as a landing dock for features and hotfix branches when they are about to be used for production releases
+- What are the best practices in working with release branches?
+    - To have it segmented in versions, to have a breanch dedicated to bug fixes and testing, tagging necessary details per commit and a always merging the main and developing release branches regularly
