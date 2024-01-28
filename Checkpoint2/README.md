@@ -30,7 +30,7 @@ git status <br />
 - [git_status_untracked](https://github.com/129325239-mysenecaa/CAA-900-AzureProject/blob/main/Checkpoint2/git_status_untracked.txt)
 - [git_status_uncommitted](https://github.com/129325239-mysenecaa/CAA-900-AzureProject/blob/main/Checkpoint2/git_status_uncommitted.txt)
 - [git_status_committed](https://github.com/129325239-mysenecaa/CAA-900-AzureProject/blob/main/Checkpoint2/git_status_committed.txt)
-- "Everything is up to date"
+- "Everything is up to date" <br />
 ![image3](Checkpoint2PartA.png)
 
 
@@ -38,8 +38,8 @@ git status <br />
 - The difference between `git status` and `git log` is that `git status` shows the information about the current state of the working directory and statging area while `git log` shows the commit history
 
 ### Part C - Creating & Merging Branches
-- "Everything is up to date"
-![image3](Checkpoint2PartC.png)
+- "Everything is up to date" <br />
+![image4](Checkpoint2PartC.png)
 
 
 ### Part D - Git Branching Strategy Review Question
