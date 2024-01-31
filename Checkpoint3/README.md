@@ -122,3 +122,8 @@ Changes not staged for commit:
 	modified:   Checkpoint3/README.md
 
 ```
+
+
+###  Part D - Collaboration - Creating Pull Request
+
+![pull-request-image](pull-request-screenshot.png)
