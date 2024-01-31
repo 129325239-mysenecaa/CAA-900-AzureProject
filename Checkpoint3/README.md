@@ -11,10 +11,10 @@
 
 
 ## Table of Contents
-1. [Part A - Manage Conflicts - Overwrite Remote Changes](#header)
-2. [Part B - Inspecting Local Repo with `git status` and `git log`](#header)
-3. [Part C - Creating & Merging Branches](#header)
-4. [Part D - Git Branching Strategy Review Question](#header)
+1. [Part A - Manage Conflicts - Overwrite Remote Changes](#Part-A---Manage-Conflicts---Overwrite-Remote-Changes)
+2. [Part B - Manage Conflicts - Reset Local Commit Head](#Part--B----Manage-Conflicts---Reset-Local-Commit-Head)
+3. [Part C - Manage Conflicts - Merge Editor](#Part-C----Manage-Conflicts---Merg-Editor)
+4. [Part D - Collaboration - Creating Pull Request](#Part-D---Collaboration---Creating-Pull-Request)
 
 
 ### Part A - Manage Conflicts - Overwrite Remote Changes
@@ -40,6 +40,9 @@ To https://github.com/129325239-mysenecaa/CAA-900-AzureProject.git
  + e3f6734...62cc2ba main -> main (forced update)
 updating local tracking ref 'refs/remotes/origin/main'
 ```
+
+What is the color of the text after you forcefully overwrite remote with local changes?
+- The color is _**darkolivegreen**_
 
 
 ### Part B - Manage Conflicts - Reset Local Commit Head
@@ -90,6 +93,9 @@ Updating 950a4b7..4ef9845
 Aborting
 ```
 
+What is the color of the text after you forcefully overwrite remote with local changes?
+-  The color is _**green**_
+
 ###  Part C - Manage Conflicts - Merge Editor
 
 
@@ -122,7 +128,7 @@ Changes not staged for commit:
 	modified:   Checkpoint3/README.md
 
 ```
-
+![manage-conflicts-image](manage-conflicts-screenshot.png)
 
 ###  Part D - Collaboration - Creating Pull Request
 

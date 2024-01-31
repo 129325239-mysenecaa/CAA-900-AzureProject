@@ -1,0 +1,10 @@
+POST git-upload-pack (196 bytes)
+From https://github.com/129325239-mysenecaa/CAA-900-AzureProject
+ = [up to date]      main        -> origin/main
+ = [up to date]      dummy       -> origin/dummy
+ = [up to date]      feat-emojis -> origin/feat-emojis
+error: Your local changes to the following files would be overwritten by merge:
+	Checkpoint3/conflict-resolution/index.html
+Please commit your changes or stash them before you merge.
+Updating 950a4b7..4ef9845
+Aborting
