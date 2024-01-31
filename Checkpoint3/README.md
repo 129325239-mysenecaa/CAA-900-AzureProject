@@ -76,3 +76,49 @@ part2-reset-head.log
 HEAD is now at 950a4b7 cp3-part1 update
 ```
 
+part2-pull-success.log
+```log
+POST git-upload-pack (196 bytes)
+From https://github.com/129325239-mysenecaa/CAA-900-AzureProject
+ = [up to date]      main        -> origin/main
+ = [up to date]      dummy       -> origin/dummy
+ = [up to date]      feat-emojis -> origin/feat-emojis
+error: Your local changes to the following files would be overwritten by merge:
+	Checkpoint3/conflict-resolution/index.html
+Please commit your changes or stash them before you merge.
+Updating 950a4b7..4ef9845
+Aborting
+```
+
+###  Part C - Manage Conflicts - Merge Editor
+
+
+part3-pull-conflict.log
+```log
+POST git-upload-pack (375 bytes)
+From https://github.com/129325239-mysenecaa/CAA-900-AzureProject
+ * branch            feat-body-text -> FETCH_HEAD
+ = [up to date]      feat-body-text -> origin/feat-body-text
+Auto-merging Checkpoint3/conflict-resolution/index.html
+CONFLICT (content): Merge conflict in Checkpoint3/conflict-resolution/index.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+```
+
+part3-status.log
+```log
+On branch main
+Your branch is up to date with 'origin/main'.
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+	modified:   Checkpoint3/conflict-resolution/index.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   Checkpoint3/README.md
+
+```
