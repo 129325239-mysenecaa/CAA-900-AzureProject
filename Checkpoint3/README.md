@@ -18,3 +18,25 @@
 
 
 ### Part A - Manage Conflicts - Overwrite Remote Changes
+
+part1-conflict-error.log
+```log
+Pushing to https://github.com/129325239-mysenecaa/CAA-900-AzureProject.git
+To https://github.com/129325239-mysenecaa/CAA-900-AzureProject.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/129325239-mysenecaa/CAA-900-AzureProject.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+part1-conflict-overwrite.log
+```log
+POST git-receive-pack (6931 bytes)
+Pushing to https://github.com/129325239-mysenecaa/CAA-900-AzureProject.git
+To https://github.com/129325239-mysenecaa/CAA-900-AzureProject.git
+ + e3f6734...62cc2ba main -> main (forced update)
+updating local tracking ref 'refs/remotes/origin/main'
+```
