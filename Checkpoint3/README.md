@@ -12,7 +12,7 @@
 
 ## Table of Contents
 1. [Part A - Manage Conflicts - Overwrite Remote Changes](#Part-A---Manage-Conflicts---Overwrite-Remote-Changes)
-2. [Part B - Manage Conflicts - Reset Local Commit Head](#Part--B---Manage-Conflicts---Reset-Local-Commit-Head)
+2. [Part B - Manage Conflicts - Reset Local Commit Head](#Part-B---Manage-Conflicts---Reset-Local-Commit-Head)
 3. [Part C - Manage Conflicts - Merge Editor](#Part-C---Manage-Conflicts---Merg-Editor)
 4. [Part D - Collaboration - Creating Pull Request](#Part-D---Collaboration---Creating-Pull-Request)
 
@@ -97,7 +97,6 @@ What is the color of the text after you forcefully overwrite remote with local c
 -  The color is _**green**_
 
 ###  Part C - Manage Conflicts - Merge Editor
-
 
 part3-pull-conflict.log
 ```log
