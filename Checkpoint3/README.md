@@ -96,7 +96,7 @@ Aborting
 What is the color of the text after you forcefully overwrite remote with local changes?
 -  The color is _**green**_
 
-###  Part C - Manage Conflicts - Merge Editor
+### Part C - Manage Conflicts - Merge Editor
 
 part3-pull-conflict.log
 ```log
