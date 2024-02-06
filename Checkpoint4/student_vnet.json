@@ -1,0 +1,16 @@
+{
+  "addressPrefix": "172.17.88.32/27",
+  "delegations": [],
+  "etag": "W/\"739262d6-3e02-445e-9b58-89aa968afecc\"",
+  "id": "/subscriptions/e22a2bd0-d760-4866-9918-1c98f501eb6a/resourceGroups/Student-RG-1202207/providers/Microsoft.Network/virtualNetworks/Server-88/subnets/SN1",
+  "name": "SN1",
+  "privateEndpointNetworkPolicies": "Disabled",
+  "privateLinkServiceNetworkPolicies": "Enabled",
+  "provisioningState": "Succeeded",
+  "resourceGroup": "Student-RG-1202207",
+  "routeTable": {
+    "id": "/subscriptions/e22a2bd0-d760-4866-9918-1c98f501eb6a/resourceGroups/Student-RG-1202207/providers/Microsoft.Network/routeTables/RT-88",
+    "resourceGroup": "Student-RG-1202207"
+  },
+  "type": "Microsoft.Network/virtualNetworks/subnets"
+}
