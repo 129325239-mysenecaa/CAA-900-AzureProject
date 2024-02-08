@@ -1,0 +1,6 @@
+Name    ResourceGroup       Location       Zones
+------  ------------------  -------------  -------
+LR-88   STUDENT-RG-1202207  canadacentral
+LS-88   STUDENT-RG-1202207  canadacentral
+WC-88   STUDENT-RG-1202207  canadacentral
+WS-88   STUDENT-RG-1202207  canadacentral

@@ -67,7 +67,7 @@ else
                 --nics  $nic_name \
                 --ssh-key-values $public_sshkey_file \
                 --no-wait
-        # if [ $? ]; then echo "Returned Error! Aborting!"; exit 2; fi
+        #if [ $? ]; then echo "Returned Error! Aborting!"; exit 2; fi
     fi
 fi
 }
