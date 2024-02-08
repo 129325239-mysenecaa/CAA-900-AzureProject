@@ -52,7 +52,7 @@ else
                 --storage-sku $OS_DISK_SKU \
                 --data-disk-delete-option Delete \
                 --nics  $nic_name \
-                --security-type Standard \
+                --security-type TrustedLaunch \
                 --no-wait
         # if [ $? ]; then echo "Returned Error! Aborting!"; exit 2; fi
     fi
