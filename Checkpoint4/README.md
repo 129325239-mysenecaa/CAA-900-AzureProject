@@ -12,12 +12,12 @@
 
 ## Table of Contents
 
-1. [Part A - Creating Network Resources using Azure CLI](#header1)
-2. [Part B - Working with Azure CLI Bash](#header2)
-3. [Part C - Network Review Questions](#header3)
-4. [Part D - Creating Virtual Machines](#header4)
-5. [Part E - Creating Custom Images](#Header5)
-6. [Part F - Clean Up your Environment](#Header6)
+1. [Part A - Creating Network Resources using Azure CLI](#part-a---creating-network-resources-using-azure-cli)
+2. [Part B - Working with Azure CLI Bash](#part-b---working-with-azure-cli-bash)
+3. [Part C - Network Review Questions](#part-c---network-review-questions)
+4. [Part D - Creating Virtual Machines](#part-d---creating-virtual-machines)
+5. [Part E - Creating Custom Images](#part-e---creating-custom-images)
+6. [Part F - Clean Up your Environment](#part-f---clean-up-your-environment)
 
 ### Part A - Creating Network Resources using Azure CLI
 
@@ -241,5 +241,172 @@ AddressPrefix    HasBgpOverride    Name              NextHopIpAddress    NextHop
 
 ### [Part E - Creating Custom Images](#Header5)
 
+1. What are the difference between the script that creates VM from Azure Generic Image vs Custom Image? A good place to start is to compare the two scripts `custom_vm_create.sh` and `vm_create.sh` and check the parameters passed to `az vm create` command. Elaborate the differences you observe.
+
+    - The main difference between the twos scripts is the presence of the `--security-type Standard` parameter. I had to include this line in the vm_create.sh script so that when the VM is created and we create an image of that VM in custom_vm_create.sh script, it would fix the security warning which was a cause in weather or not Azure would create a VM from the image or not. Another difference is the paramater `--hyperv-generation` that is present in the custom_vm_create.sh script and not in the vm_create.sh script. This parameter is used for Windows VMs to specify whether Azure should create the VM as a Gen1 or Gen2 VM.
+
+2. If you run `custom_vm_create.sh` without custom image `version` number, the script will throw an error and show you the usage suggestion. What is the usage suggestion?
+
+    ```
+    "target_version parameter not provided"
+    "Usage: ./image_create.sh <target_version>"
+    ```
+
+3. The script is purposefully written such that it waits on each custom image creation to be completed before proceeding to next image. Can you update the script such that custom images creation runs in background, i.e. how can you parallelize the process?_Hint: only provide the single line command that you need to update_
+
+    `sleep 10`
+
+4. Once all custom images are successfully created, run a command in CLI that lists all your Custom Images. Change the output format to table format and embed the answer in your submission.
+
+    ```
+    HyperVGeneration    Location       Name           ProvisioningState    ResourceGroup
+    ------------------  -------------  -------------  -------------------  ------------------
+    V2                  canadacentral  lr-88-ver-1.0  Succeeded            STUDENT-RG-1202207
+    V2                  canadacentral  ls-88-ver-1.0  Succeeded            STUDENT-RG-1202207
+    V2                  canadacentral  wc-88-ver-1.0  Succeeded            STUDENT-RG-1202207
+    V1                  canadacentral  ws-88-ver-1.0  Succeeded            STUDENT-RG-1202207
+    ```
+
+5. Delete your VMs using the proper script after above step is completed. Then re-create VMs using your custom images. Check is all VMs are accessible, i.e. Client VM can be reached via Bastion and Linux VMs can be accessed with ssh.
+
+6. Get a list of your VM, NSG, NIC, Disks, and Custom Iamges using Azure CLI in table format. Which ones are empty? **Do not include screenshots, just embed the output in **table** format in your submission.
+
+ - List of VMs
+    ```tbl
+    Name    ResourceGroup       Location       Zones
+    ------  ------------------  -------------  -------
+    LR-88   STUDENT-RG-1202207  canadacentral
+    LS-88   STUDENT-RG-1202207  canadacentral
+    WC-88   STUDENT-RG-1202207  canadacentral
+    WS-88   STUDENT-RG-1202207  canadacentral
+    ```
+
+ - List of NSGs
+    ```tbl
+    Location       Name       ProvisioningState    ResourceGroup       ResourceGuid
+    -------------  ---------  -------------------  ------------------  ------------------------------------
+    canadacentral  LR-NSG-88  Succeeded            Student-RG-1202207  c5608a31-8300-41e3-8d48-4b76d054ffe4
+    canadacentral  LS-NSG-88  Succeeded            Student-RG-1202207  dd029234-5f5e-4e1e-9631-54ab6056a661
+    canadacentral  WC-NSG-88  Succeeded            Student-RG-1202207  2de1ddf7-d90f-4d90-b4be-6ec2c8a90f36
+    canadacentral  WS-NSG-88  Succeeded            Student-RG-1202207  2ba7b578-db63-4d32-9192-3313c1a3be0c
+    ```
+
+ - List of NICs
+    <table>
+    
+    <tr>
+    <th>AuxiliaryMode </th>   
+    <th>AuxiliarySku  </th>   
+    <th>DisableTcpStateTracking    </th> 
+    <th>EnableAcceleratedNetworking   </th>  
+    <th>EnableIPForwarding    </th> 
+    <th>Location       </th> 
+    <th>MacAddress         </th> 
+    <th>Name   </th> 
+    <th>NicType    </th> 
+    <th>Primary    </th> 
+    <th>ProvisioningState   </th>  
+    <th>ResourceGroup      </th>  
+    <th>ResourceGuid       </th>                    
+    <th>VnetEncryptionSupported </th> 
+    </tr>
+    <tr>
+    <td>None  </td>           
+    <td>None    </td>         
+    <td>False    </td>                   
+    <td>False    </td>                       
+    <td>True     </td>              
+    <td>canadacentral  </td> 
+    <td>60-45-BD-5F-00-A4  </td> 
+    <td>lr-88   </td> 
+    <td>Standard   </td> 
+    <td>True       </td> 
+    <td>Succeeded    </td>         
+    <td>Student-RG-1202207 </td>  
+    <td>56576020-3cd1-48f3-a383-6378da1f96c5  </td> 
+    <td>False</td> 
+    </tr>
+    <tr>
+    <td>None </td>            
+    <td>None  </td>          
+    <td>False </td>                     
+    <td>False  </td>                        
+    <td>False   </td>              
+    <td>canadacentral  </td>
+    <td>00-0D-3A-E8-73-A0  </td>
+    <td>ls-88   </td>
+    <td>Standard   </td>
+    <td>True       </td>
+    <td>Succeeded      </td>      
+    <td>Student-RG-1202207 </td>
+    <td>7bad8ad1-7b37-4afd-9b3c-5166428b91d3  </td>
+    <td>False</td>
+    </tr>
+    <tr>
+    <td>None </td>            
+    <td>None  </td>          
+    <td>False   </td>                   
+    <td>False    </td>                      
+    <td>False    </td>             
+    <td>canadacentral  </td>
+    <td>00-0D-3A-E9-72-CE  </td>
+    <td>wc-88   </td>
+    <td>Standard   </td>
+    <td>True       </td>
+    <td>Succeeded     </td>       
+    <td>Student-RG-1202207  </td>
+    <td>0f792bbd-586e-45c5-bebb-84fbb3dd5b40  </td>
+    <td>False</td>
+    </tr>
+    <tr>
+    <td>None  </td>           
+    <td>None    </td>        
+    <td>False   </td>                   
+    <td>False   </td>                       
+    <td>False         </td>        
+    <td>canadacentral  </td>
+    <td>60-45-BD-60-74-5C  </td>
+    <td>ws-88   </td>
+    <td>Standard   </td>
+    <td>True       </td>
+    <td>Succeeded         </td>   
+    <td>Student-RG-1202207  </td>
+    <td>92658d42-1959-4c0b-919e-634608fd98f7  </td>
+    <td>False</td>
+    </tr>
+    
+    </table>
+
+ - List of Disks
+    ```tbl
+    Name                                          ResourceGroup       Location       Zones    Sku              OsType    SizeGb    ProvisioningState
+    --------------------------------------------  ------------------  -------------  -------  ---------------  --------  --------  -------------------
+    LR-88_disk1_ebfa00857c95456cabd231dd67e388f3  STUDENT-RG-1202207  canadacentral           StandardSSD_LRS  Linux     64        Succeeded
+    LS-88_disk1_eb13970be3274e569e69b2b042a73674  STUDENT-RG-1202207  canadacentral           StandardSSD_LRS  Linux     64        Succeeded
+    WC-88_disk1_6e9a66e9269f4ffe85afb56a3c34beca  STUDENT-RG-1202207  canadacentral           StandardSSD_LRS  Windows   127       Succeeded
+    WS-88_disk1_9b62926baf7d4fc19ab4efbdc9c808b8  STUDENT-RG-1202207  canadacentral           StandardSSD_LRS  Windows   127       Succeeded
+    ```
+ - List of Custom Images
+    ```tbl
+    HyperVGeneration    Location       Name           ProvisioningState    ResourceGroup
+    ------------------  -------------  -------------  -------------------  ------------------
+    V2                  canadacentral  lr-88-ver-1.0  Succeeded            STUDENT-RG-1202207
+    V2                  canadacentral  ls-88-ver-1.0  Succeeded            STUDENT-RG-1202207
+    V2                  canadacentral  wc-88-ver-1.0  Succeeded            STUDENT-RG-1202207
+    V1                  canadacentral  ws-88-ver-1.0  Succeeded            STUDENT-RG-1202207
+    ```
 
 ### [Part F - Clean Up your Environment](#Header6)
+
+1. After deleting list all your VMs using `az  vm list ...` with the output in `table` format. What command did you use? How can you ensure all your VMs are deleted?
+    `az vm list --out table`
+    - We can ensure that a VM is delete, we should not be able to see the VM listed in the output from the `az vm list` command. If the VM is successfuly deleted, it would return an empty table.
+
+2. Why you are not asked to delete Custom Images? What is the difference between VM and Custom Image that makes VM a very costly resource and Custom Images, negligible? (_Hint: It is related to OS Disk_)
+    - It is because Custom Images themselves do not cost as much as VM resources due to the face that the storage costs that are coming from Custom Images are lower than a running VM. The difference between VMs and Custom Images is that VMs are charged based on their compute and storage resources while Custom Images are only charged for their storage resources.
+
+3. What are cost implications of NSG or NIC? Why are you deleting them?
+    - The cost implications from both an NSG and NIC are usually caused by the resources that are associated with them like VMs or subnets since both of them do not have a direct standalone cost related to them. We are deleting these resources for both adminitrative and security reasons in cases where we need to organize the resources for maintenance or for security rules that need to be updated when they are deleted.
+
+4. Why you are not deleting Network backend like VNET and Route-Tables?
+    - We are not deleting the network backend like the VNET and Route Tables because there is a high risk for the entire architecture to malfunction if the deletion action is not planned properly. If these resources were to be deleted abruptly, it would cause data loss, service disruptions or a need to recreate the entire thing. If we are to make changes, it would be better to modify the existing configuration instead.
