@@ -1,11 +1,13 @@
 # variable declaration
-source ./network_config.sh
+# already declared in another file, this line is redundant
+# source ./network_config.sh
 
 # //////////////////////////////////////////////////////////////
 # Update the lines that are specific to your network 
 # /////////////////////////////////////////////////////////////
 # ---------------------------------------------------
 # Windows VM Credentials
+
 USER_NAME="icmajam"
 ADMIN_PW="Password88!@#"
 
@@ -44,13 +46,14 @@ WS_NSG_name="WS-NSG-$ID"
 
 # ---------------------------------------------------
 # VM Image, Machine Size, Disk Settings
-VM_IMG_WC="MicrosoftWindowsDesktop:Windows-10:win10-21h2-pro-g2:latest"
-VM_IMG_LR="RedHat:RHEL:8-lvm-gen2:latest"
+VM_IMG_WC="MicrosoftWindowsDesktop:Windows-10:win10-22h2-pro:latest"
+VM_IMG_LR="RedHat:RHEL:8-lvm:latest"
 VM_IMG_WS="MicrosoftWindowsServer:WindowsServer:2019-Datacenter:latest"
-VM_IMG_LS="RedHat:RHEL:8-lvm-gen2:latest"
+VM_IMG_LS="RedHat:RHEL:8-lvm:latest"
 
 VM_SIZE="Standard_B2s"
 OS_DISK_SKU="StandardSSD_LRS"
+SECURITY_TYPE="Standard"
 
 # ---------------------------------------------------
 # Static IP setting
@@ -66,7 +69,7 @@ Azure_Default_DNS="168.63.129.16"
 
 declare -a vm_list=("$VM_WC" "$VM_LR" "$VM_WS" "$VM_LS")
 declare -a nic_list=("$NIC_WC" "$NIC_LR" "$NIC_WS"  "$NIC_LS")
-declare -a NSG_list=("$WC_NSG_name" "$LR_NSG_name" "$LS_NSG_name" "$WS_NSG_name")
+declare -a nsg_list=("$WC_NSG_name" "$LR_NSG_name" "$LS_NSG_name" "$WS_NSG_name")
 
 # ---------------------------------------------------
 # configure auto shut down parameters
