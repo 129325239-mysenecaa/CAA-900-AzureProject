@@ -11,8 +11,8 @@
 ## Table of Contents
 
 1. [Part A - Creating & Configuring VMs - Using Portal](#header)
-2. [Part C - Enable IP_Forwarding - Using Portal](#header)
-3. [Part B - Basic Connectivity - VM Configuration](#header)
+2. [Part B - Enable IP_Forwarding - Using Portal](#header)
+3. [Part C - Basic Connectivity - VM Configuration](#header)
 4. [Part D - Creating & Configuring VM Images - Using Portal](#header)
 5. [Part E - Azure Cost Analysis Charts](#header)
 6. [Part F - Create Customized Azure Dashboard](#header)
@@ -90,12 +90,155 @@
     ```
 
 
-### [Part C - Enable IP_Forwarding - Using Portal](#header)
+### [Part B - Enable IP_Forwarding - Using Portal](#header)
+1. Check the status of ip-forwarding using the command `az network nic ip-config show` with output format as `json`. Include **only** the command **not output** including the `--query` you used in your submission.
 
-### [Part B - Basic Connectivity - VM Configuration](#header)
+    `az network nic ip-config show --name ipconfig1 --nic-name lr-88168_z1 --resource-group Student-RG-1202207 --output json`
+
+2. When your output format is `json`, which property shows the status of the ip-forwarding attribute? Embed **only** the property that shows the status of ip-forwarding.
+    `"enableIPForwarding": true`
+
+
+3. Check if the IP forwarding in NIC is enabled using Azure bash. 👉 Hint: `az network nic show -g <rg-name> -n <nic-name> --query "enableIpForwarding"`
+
+    `az network nic show -g Student-RG-1202207 -n lr-88168_z1 --query "ipConfigurations[0].enableIpForwarding" --output json`
+
+    MAKE THIS A DROPDOWN
+    
+    ```json
+    {
+    "auxiliaryMode": "None",
+    "auxiliarySku": "None",
+    "disableTcpStateTracking": false,
+    "dnsSettings": {
+        "appliedDnsServers": [],
+        "dnsServers": [],
+        "internalDomainNameSuffix": "dlynwnwynytuvljgffilbu3xre.ux.internal.cloudapp.net"
+    },
+    "enableAcceleratedNetworking": false,
+    "enableIPForwarding": true,
+    "etag": "W/\"0454a5dc-a6c2-4f93-9d9b-d21cf010cc1b\"",
+    "hostedWorkloads": [],
+    "id": "/subscriptions/e22a2bd0-d760-4866-9918-1c98f501eb6a/resourceGroups/Student-RG-1202207/providers/Microsoft.Network/networkInterfaces/lr-88168_z1",
+    "ipConfigurations": [
+        {
+        "etag": "W/\"0454a5dc-a6c2-4f93-9d9b-d21cf010cc1b\"",
+        "id": "/subscriptions/e22a2bd0-d760-4866-9918-1c98f501eb6a/resourceGroups/Student-RG-1202207/providers/Microsoft.Network/networkInterfaces/lr-88168_z1/ipConfigurations/ipconfig1",
+        "name": "ipconfig1",
+        "primary": true,
+        "privateIPAddress": "192.168.88.36",
+        "privateIPAddressVersion": "IPv4",
+        "privateIPAllocationMethod": "Dynamic",
+        "provisioningState": "Succeeded",
+        "resourceGroup": "Student-RG-1202207",
+        "subnet": {
+            "id": "/subscriptions/e22a2bd0-d760-4866-9918-1c98f501eb6a/resourceGroups/Student-RG-1202207/providers/Microsoft.Network/virtualNetworks/Router-88/subnets/SN1",
+            "resourceGroup": "Student-RG-1202207"
+        },
+        "type": "Microsoft.Network/networkInterfaces/ipConfigurations"
+        }
+    ],
+    "location": "canadacentral",
+    "macAddress": "00-22-48-AD-EF-3F",
+    "name": "lr-88168_z1",
+    "networkSecurityGroup": {
+        "id": "/subscriptions/e22a2bd0-d760-4866-9918-1c98f501eb6a/resourceGroups/Student-RG-1202207/providers/Microsoft.Network/networkSecurityGroups/LR-88-nsg",
+        "resourceGroup": "Student-RG-1202207"
+    },
+    "nicType": "Standard",
+    "primary": true,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "Student-RG-1202207",
+    "resourceGuid": "4a0592b1-11f6-4f69-a212-bde431d7d1e0",
+    "tags": {
+        "DeploymentId": "1202207",
+        "LaunchId": "37686",
+        "LaunchType": "ON_DEMAND_LAB",
+        "TemplateId": "7633",
+        "TenantId": "353"
+    },
+    "tapConfigurations": [],
+    "type": "Microsoft.Network/networkInterfaces",
+    "virtualMachine": {
+        "id": "/subscriptions/e22a2bd0-d760-4866-9918-1c98f501eb6a/resourceGroups/Student-RG-1202207/providers/Microsoft.Compute/virtualMachines/LR-88",
+        "resourceGroup": "Student-RG-1202207"
+    },
+    "vnetEncryptionSupported": false
+    }
+    ```
+
+
+### [Part C - Basic Connectivity - VM Configuration](#header)
+
+1. In configuring your Linux VMs, for the step "Remove the `firewalld` service", which command will you be using?
+
+    `sudo systemctl disable firewalld`
+2. In configuring your Linux VMs, what command do you use to check the status of `iptables`?
+    `sudo systemctl status iptables`
+
+3. How can you make iptables service start automatically after reboot on CenOS/RHEL8? 👉 Hint: [RHEL7: How to disable `Firewalld`` and use Iptables instead](https://www.certdepot.net/rhel7-disable-firewalld-use-iptables/)
+
+    `systemctl enable iptables`
+
+4. Run a command in `LR-xx` that shows all `iptables` chains with their order number. What is the default setting? Include both the command and its output in your submission. How could you improve these settings to be less vulnerable to attacks?
+
+    `sudo iptables -nvL --line-numbers` 
+
+    The default setting for INPUT, OUTPUT and FORWARD is set to 'ACCEPT' based on their policy value. To improve these settings to make it less vulnerable to attacks is changing the default policies to 'DROP' instead of 'ACCEPT' and to update the traffic rules from an "Anywhere" value to a specific address and port
+
+
+5. Run a command that shows the hostname in `LR-XX` and `LS-XX`. Embed the output in your submission.
+    
+    LR-88 Hostname = `LR-88.CAA900-2241.com`
+    LS-88 Hostname = `LS-88.CAA900-2241.com`
 
 ### [Part D - Creating & Configuring VM Images - Using Portal](#header)
 
+1. Run a command in CLI that lists all your Custom Images. Hint: `az image list ...`. Change the output format to table format and embed the answer in your submission.
+
+    ```
+    HyperVGeneration    Location       Name             ProvisioningState    ResourceGroup
+    ------------------  -------------  ---------------  -------------------  ------------------
+    V1                  canadacentral  lr-88-ver-0.0.1  Succeeded            STUDENT-RG-1202207
+    V2                  canadacentral  lr-88-ver-1.0    Succeeded            STUDENT-RG-1202207
+    V1                  canadacentral  ls-88-ver-0.0.1  Succeeded            STUDENT-RG-1202207
+    V2                  canadacentral  ls-88-ver-1.0    Succeeded            STUDENT-RG-1202207
+    V1                  canadacentral  wc-88-ver-0.0.1  Succeeded            STUDENT-RG-1202207
+    V2                  canadacentral  wc-88-ver-1.0    Succeeded            STUDENT-RG-1202207
+    V1                  canadacentral  ws-88-ver-0.0.1  Succeeded            STUDENT-RG-1202207
+    V1                  canadacentral  ws-88-ver-1.0    Succeeded            STUDENT-RG-1202207    
+    ```
+
+2. Delete your VMs after your work is completed. Run a command in CLI that lists all your VMs. Hint: `az vm list ...`. Change the output format to table format and embed the answer in your submission.
+
+   `az vm list --output table`
+   
+   The output is `null` since all VMs were deleted.
+
+3. Recreate all VMs from your images, and establish basic connectivity. How long the entire process took? How can you do this more efficiently?
+
+    The entire process would talk around 45 mins total to create, setup and establish basic connectivity. This can be done more efficiently by automation the actions in scripts and using CLI commands instead of using the portal.
+
+
 ### [Part E - Azure Cost Analysis Charts](#header)
 
+1. Follow the instructions and create a Cost Analysis table similar to the sample given to you and embed it in your submission. **Do not put it in a separate file, add it to your README.md, but you can keep images in a separate folder. It makes your folder clean and more accessible**
+
+
+| No. | Scope | Chart Type | VIEW Type |  Date Range | Group By | Granularity| Example |
+|-|-|-|-|-|-|-|-|
+|1|Student-RG-1202207| Column (Stacked) | DailyCosts | Last 7 Days | Resource | Daily | <img src="./images/daily-cost-barchart.jpg" alt="Daily Cost Barchart" style="float: left; margin-right: 10px;" /> |
+|2|Student-RG-1202207| Column (Stacked) | DailyCosts | Last 7 Days | Service | Daily | <img src="./images/daily-cost-service-barchart.jpg" alt="Daily Cost Service-Barchart.jpg" style="float: left; margin-right: 10px;" /> |
+|3|Student-RG-1202207| Area| AccumulatedCosts | Last 7 Days | Resource | Accumulated | <img src="./images/accumulated-resource-barchart.jpg" alt="Accumulated Resource Barchart" style="float: left; margin-right: 10px;" /> |
+|4|Student-RG-1202207| Pie Chart | NA | Last Month | Service Name | NA | <img src="./images/service-name-piechart.jpg" alt="Service Name Piechart" style="float: left; margin-right: 10px;" /> |
+|5|Student-RG-1202207| Pie Chart | NA | Last Month | Service Family | NA | <img src="./images/service-family-piechart.jpg" alt="Service Family Piechart" style="float: left; margin-right: 10px;" /> |
+|6|Student-RG-1202207| Pie Chart | NA | Last Month | Product | NA | <img src="./images/product-piechart.jpg" alt="Product Piechart" style="float: left; margin-right: 10px;" /> |
+
 ### [Part F - Create Customized Azure Dashboard](#header)
+
+
+1. Follow the instructions and create a customized Dashboard that contains the minimum above resources in a configuration similar to the sample given to you and embed it in your submission. **Do not put it in a separate file, add it to your README.md, but you can keep images in a separate folder. It makes your folder clean and more accessible**
+
+# Azure Customized Dashboard Sample
+
+<img src="./images/dashboard-sample.jpg" alt="Dashboard Sample" style="float: left; margin-right: 10px;" />
