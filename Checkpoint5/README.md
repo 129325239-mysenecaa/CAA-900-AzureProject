@@ -10,14 +10,14 @@
 
 ## Table of Contents
 
-1. [Part A - Creating & Configuring VMs - Using Portal](#header)
-2. [Part B - Enable IP_Forwarding - Using Portal](#header)
-3. [Part C - Basic Connectivity - VM Configuration](#header)
-4. [Part D - Creating & Configuring VM Images - Using Portal](#header)
-5. [Part E - Azure Cost Analysis Charts](#header)
-6. [Part F - Create Customized Azure Dashboard](#header)
+1. [Part A - Creating & Configuring VMs - Using Portal](#part-a---creating-&-configuring-vms---using-portal)
+2. [Part B - Enable IP_Forwarding - Using Portal](#part-b---enable-ip_forwarding---using-portal)
+3. [Part C - Basic Connectivity - VM Configuration](#part-c---basic-connectivity---vm-configuration)
+4. [Part D - Creating & Configuring VM Images - Using Portal](#part-d---creating-&-configuring-vm-images---using-portal)
+5. [Part E - Azure Cost Analysis Charts](#part-e---azure-cost-analysis-charts)
+6. [Part F - Create Customized Azure Dashboard](#part-f---create-customized-azure-dashboard)
 
-### [Part A - Creating & Configuring VMs - Using Portal](#header)
+### [Part A - Creating & Configuring VMs - Using Portal](#part-a---creating-&-configuring-vms---using-portal)
 
 1. What is the difference between Windows machine NSG and Linux machine NSG rules? Why? **Do not give screenshots** just describe the difference? Do you need a rule for `ssh` or `rdp`? What happens if you delete specific `ssh` and `rdp` rules?
     <p>&nbsp;&nbsp;
@@ -90,7 +90,7 @@
     ```
 
 
-### [Part B - Enable IP_Forwarding - Using Portal](#header)
+### [Part B - Enable IP_Forwarding - Using Portal](#part-b---enable-ip_forwarding---using-portal)
 1. Check the status of ip-forwarding using the command `az network nic ip-config show` with output format as `json`. Include **only** the command **not output** including the `--query` you used in your submission.
 
     `az network nic ip-config show --name ipconfig1 --nic-name lr-88168_z1 --resource-group Student-RG-1202207 --output json`
@@ -168,7 +168,7 @@
     ```
 
 
-### [Part C - Basic Connectivity - VM Configuration](#header)
+### [Part C - Basic Connectivity - VM Configuration](#part-c---basic-connectivity---vm-configuration)
 
 1. In configuring your Linux VMs, for the step "Remove the `firewalld` service", which command will you be using?
 
@@ -192,7 +192,7 @@
     LR-88 Hostname = `LR-88.CAA900-2241.com`
     LS-88 Hostname = `LS-88.CAA900-2241.com`
 
-### [Part D - Creating & Configuring VM Images - Using Portal](#header)
+### [Part D - Creating & Configuring VM Images - Using Portal](#part-d---creating-&-configuring-vm-images---using-portal)
 
 1. Run a command in CLI that lists all your Custom Images. Hint: `az image list ...`. Change the output format to table format and embed the answer in your submission.
 
@@ -220,7 +220,7 @@
     The entire process would talk around 45 mins total to create, setup and establish basic connectivity. This can be done more efficiently by automation the actions in scripts and using CLI commands instead of using the portal.
 
 
-### [Part E - Azure Cost Analysis Charts](#header)
+### [Part E - Azure Cost Analysis Charts](#part-e---azure-cost-analysis-charts)
 
 1. Follow the instructions and create a Cost Analysis table similar to the sample given to you and embed it in your submission. **Do not put it in a separate file, add it to your README.md, but you can keep images in a separate folder. It makes your folder clean and more accessible**
 
@@ -234,11 +234,11 @@
 |5|Student-RG-1202207| Pie Chart | NA | Last Month | Service Family | NA | <img src="./images/service-family-piechart.jpg" alt="Service Family Piechart" style="float: left; margin-right: 10px;" /> |
 |6|Student-RG-1202207| Pie Chart | NA | Last Month | Product | NA | <img src="./images/product-piechart.jpg" alt="Product Piechart" style="float: left; margin-right: 10px;" /> |
 
-### [Part F - Create Customized Azure Dashboard](#header)
+### [Part F - Create Customized Azure Dashboard](#part-f---create-customized-azure-dashboard)
 
 
 1. Follow the instructions and create a customized Dashboard that contains the minimum above resources in a configuration similar to the sample given to you and embed it in your submission. **Do not put it in a separate file, add it to your README.md, but you can keep images in a separate folder. It makes your folder clean and more accessible**
 
-# Azure Customized Dashboard Sample
+### Azure Customized Dashboard Sample
 
 <img src="./images/dashboard-sample.jpg" alt="Dashboard Sample" style="float: left; margin-right: 10px;" />
