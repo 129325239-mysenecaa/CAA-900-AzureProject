@@ -52,8 +52,8 @@ echo "---------------------------------------------------"
 echo "hostnamectl status"
 hostnamectl status
 echo "---------------------------------------------------" 
-echo "hostnamectl set-hostname LS-xx.CAA900-2241.com #static"
-hostnamectl set-hostname LS-xx.CAA900-2241.com #static
+echo "hostnamectl set-hostname LS-88.CAA900-2241.com #static"
+hostnamectl set-hostname LS-88.CAA900-2241.com #static
 
 # Install tcpdump
 echo "---------------------------------------------------" 

@@ -26,7 +26,7 @@ iptables -A INPUT -i lo -j ACCEPT
 # Allow all SSH traffic on port 22 from Source IP subnet student_vnet
 echo "-------------------------------------------"
 echo "Allow all SSH traffic on port 22 from Source IP subnet student_vnet"
-iptables -A INPUT -p tcp -s xx.xx.xx.xx/24 -m state --state NEW --dport 22 -j ACCEPT
+iptables -A INPUT -p tcp -s 10.13.175.0/24 -m state --state NEW --dport 22 -j ACCEPT
 
 # Log before DROPPING
 echo "-------------------------------------------"
@@ -42,16 +42,16 @@ iptables -A INPUT -j DROP
 echo "-------------------------------------------"
 echo "SSH"
 echo "Allow forwarding all SSH traffic on port 22 from any source to any destination"
-iptables -A FORWARD -p tcp -s xx.xx.xx.xx/24 -d xx.xx.xx.xx/27 --dport 22 -j ACCEPT
-iptables -A FORWARD -p tcp -s xx.xx.xx.xx/27 -d xx.xx.xx.xx/24 --sport 22 -j ACCEPT
+iptables -A FORWARD -p tcp -s 10.13.175.0/24 -d 172.17.88.32/27 --dport 22 -j ACCEPT
+iptables -A FORWARD -p tcp -s 172.17.88.32/27 -d 10.13.175.0/24 --sport 22 -j ACCEPT
 
 
 # Allow forwarding RDP traffic on port 3389 from from Windows Client to Server SN1
 echo "-------------------------------------------"
 echo "RDP"
 echo "Allow forwarding all RDP traffic on port 3389 from any source to any destination"
-iptables -A FORWARD -p tcp -s xx.xx.xx.xx/24 -d xx.xx.xx.xx/27 --dport 3389 -j ACCEPT
-iptables -A FORWARD -p tcp -s xx.xx.xx.xx/27 -d xx.xx.xx.xx/24 --sport 3389 -j ACCEPT
+iptables -A FORWARD -p tcp -s 10.13.175.0/24 -d 172.17.88.32/27 --dport 3389 -j ACCEPT
+iptables -A FORWARD -p tcp -s 172.17.88.32/27 -d 10.13.175.0/24 --sport 3389 -j ACCEPT
 
 # Log before DROPPING
 echo "-------------------------------------------"

@@ -27,13 +27,13 @@ iptables -A INPUT -i lo -j ACCEPT
 echo "-------------------------------------------"
 echo "Allow any traffic from Linux Router on SSH port 22 into the VM"
 echo "SSH"
-iptables -A INPUT -p tcp -s 192.168.xx.32/27 --dport 22 -j ACCEPT
+iptables -A INPUT -p tcp -s 192.168.88.32/27 --dport 22 -j ACCEPT
 
 # Allow any traffic from Desktop Client on SSH port 22 into the VM 
 echo "-------------------------------------------"
 echo "Allow any traffic from Deskktop Client Router on SSH port 22 into the VM"
 echo "SSH"
-iptables -A INPUT -p tcp -s xx.xx.xx.xx/24 --dport 22 -j ACCEPT
+iptables -A INPUT -p tcp -s 10.13.175.0/24 --dport 22 -j ACCEPT
 
 # Log before DROPPING
 echo "-------------------------------------------"
