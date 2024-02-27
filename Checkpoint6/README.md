@@ -37,8 +37,8 @@
 
 3. Submit your `lr_iptables.txt` and `ls_iptables.txt` files. **Do not** embed them in your `README.md`, just add it in your folder and give a hyperlink.
 
-    - [lr_iptables.txt](https://towardsdatascience.com/the-ultimate-markdown-cheat-sheet-3d3976b31a0)
-    - [ls_iptables.txt](https://towardsdatascience.com/the-ultimate-markdown-cheat-sheet-3d3976b31a0)
+    - [lr_iptables.txt](https://github.com/129325239-mysenecaa/CAA-900-AzureProject/blob/main/Checkpoint6/lr_iptables.txt)
+    - [ls_iptables.txt](https://github.com/129325239-mysenecaa/CAA-900-AzureProject/blob/main/Checkpoint6/ls_iptables.txt)
 
 
 4. Test your firewall settings and your configurations for basic `ssh` and `rdp` connectivity between your Desktop Client and Linux Server `LS-xx` and Windows Server `WS-xx` a few times.
